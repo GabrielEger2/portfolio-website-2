@@ -11,6 +11,7 @@ import portrait from '../assets/imgs/GabrielPhoto.png';
 import ProfilePic from '../assets/imgs/GabrielProfilePic.png'
 import ProfilePicBlur from '../assets/imgs/GabrielProfilePicBlur.png'
 import MotionCard from '../components/MotionCard';
+import SkillsCarousel from '../components/SkillsCarousel';
 
 const Home = () => {
     return (
@@ -90,6 +91,9 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div>
+                <SkillsCarousel />
             </div>
         </div>
       )

@@ -4,9 +4,16 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      borderRadius: {
+        'xll': '8rem',
+      },
+      rotate: {
+        '360': '360deg',
+      },
+    },
   },
   plugins: [],
-}
-
+};

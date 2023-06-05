@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Import the components used in the router
 import App from "./App";
-import Main from "./routes/Home";
+import Home from "./routes/Home";
 
 // Import CSS file
 import "./index.css";
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     path: "/", // The root path
     element: <App />, // The App component is the top-level element for the root path
     children: [
-      { path: "/", element: <Main /> }, // The Main component is displayed at the root path
+      { path: "/", element: <Home /> }, // The Main component is displayed at the root path
 
     ]
   },

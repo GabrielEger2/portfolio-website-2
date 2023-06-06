@@ -1,24 +1,34 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { client, urlFor } from '../client';
 
-const skills = [
-  ];
+const skills = await client.fetch(`*[_type == "skillsCarousel"]`);
 
 const SkillsCarousel = () => {
+    const [skills, setSkills] = useState([]);
+
+    useEffect(() => {
+      const query = '*[_type == "skillsCarousel"]';
+
+      client.fetch(query).then((data) => {
+        setSkills(data);
+      });
+    }, []);
+    
     const constraintsRef = useRef();
     const totalItems = skills.length;
     
     return (
-        <div className='flex px-1 md:px-4 py-10 border-y bg-gray-100 border-gray-300 dark:bg-gray-900 dark:border-gray-950'>
+        <div className='flex px-1 md:px-4 py-10 border-y bg-gray-200 border-gray-300 dark:bg-gray-900 dark:border-gray-950'>
             <div ref={constraintsRef} className='overflow-hidden flex' style={{ margin: '0 5%' }}>
                 <div ref={constraintsRef} className="flex" style={{width: '100%'}}>
                     <motion.div
                     key={totalItems}
                     animate={{
-                      x: -totalItems * 90 // Adjust the value based on your carousel item width
+                      x: -totalItems * 20 // Adjust the value based on your carousel item width
                     }}
                     transition={{
-                      duration: totalItems * 3,
+                      duration: totalItems * 0.1,
                       repeat: Infinity,
                       repeatType: "mirror"
                     }}
@@ -28,8 +38,8 @@ const SkillsCarousel = () => {
                     >
                         {skills.map((element) => {
                             return (
-                                <motion.div key={element.id} className='w-32 h-32 rounded-lg cursor-grab overflow-hidden'>
-                                    <img className='h-32 w-32 object-cover rounded-xl pointer-events-none' src={element.image} alt={element.tile}/>
+                                <motion.div key={element.id} className='w-24 h-24 rounded-lg cursor-grab overflow-hidden'>
+                                    <img className='h-24 w-24 object-cover rounded-xl pointer-events-none' src={urlFor(element.skillsImage)} alt={element.skillsTitle} />
                                 </motion.div>
                             );
                         })}

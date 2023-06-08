@@ -79,7 +79,7 @@ const Navbar = () => {
                                 <a href="#contact">Contact</a>
                                 <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gray-800 dark:bg-gray-50"></span>
                             </li>
-                            <label className='rounded-full flex items-center'>
+                            <label className='rounded-full flex items-center mb-0.5'>
                                 <button onClick={handleDarkMode}>
                                     <div className='transition ease-in-out duration-500 text-gray-50 scale-0 dark:block dark:scale-100 dark:rotate-360 absolute'>
                                         <BsFillMoonStarsFill size={22} />

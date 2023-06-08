@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       borderRadius: {
-        'xll': '8rem',
+        'xll': '10rem',
       },
       rotate: {
         '360': '360deg',

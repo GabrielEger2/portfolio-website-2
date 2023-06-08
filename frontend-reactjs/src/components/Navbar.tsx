@@ -72,10 +72,6 @@ const Navbar = () => {
                                 <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gray-800 dark:bg-gray-50"></span>
                             </li>
                             <li className="group">
-                                <a href="#skills">Skills</a>
-                                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gray-800 dark:bg-gray-50"></span>
-                            </li>
-                            <li className="group">
                                 <a href="#projects">Projects</a>
                                 <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gray-800 dark:bg-gray-50"></span>
                             </li>

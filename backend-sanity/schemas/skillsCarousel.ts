@@ -4,6 +4,11 @@ export default {
     title: 'Skills Carousel',
     fields: [
         {
+            name: 'skillsImageDark',
+            type: 'image',
+            title: 'SkillsImageDark',
+        },
+        {
             name: 'skillsImage',
             type: 'image',
             title: 'SkillsImage',
@@ -12,6 +17,11 @@ export default {
             name: 'skillsTitle',
             type: 'string',
             title: 'SkillsTitle',
-        }   
+        },
+        {
+            name: 'skillsLink',
+            type: 'string',
+            title: 'SkillsLink',
+        }
     ]
 }

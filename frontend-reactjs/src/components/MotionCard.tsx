@@ -24,9 +24,10 @@ const MotionCard = () => {
             </h2>
         </motion.h2>
         {isOpen && (
-          <motion.div className='pt-3 px-2'>
+          <motion.div className='pt-3 px-2 max-w-[900px] h-auto'>
             <p>
-                Hello World
+            Hello world. My name is Gabriel Eger, a goal-oriented, determined and ambitious Computer Science student. Learning has always been a devotion of mine and has only increased after I discovered the coding universe; throughout this new journey, I've faced many obstacles, but none that made me have the slight desire to give up; on the contrary, the more I learn about bits and code, the more I understand my limitations and the more motivated I am to improve.
+          ' In my free time, I like to read old Sci-fi books, watch random obscure films, do stupid roleplay things in D&D, watch the seasonal animes, learn 漢字 or grind on an MMO.
             </p>
           </motion.div>
         )}

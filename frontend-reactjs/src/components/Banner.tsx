@@ -1,4 +1,5 @@
 import ReactTyped from 'react-typed';
+import { motion } from "framer-motion";
 
 import { LuExternalLink } from 'react-icons/lu';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
@@ -10,7 +11,7 @@ import portrait from '../assets/imgs/GabrielPhoto.png';
 
 const Banner = () => {
   return (
-    <div className="w-full h-[100vh] bg-gray-100 dark:bg-gray-800">
+    <div className="w-full h-[100vh] bg-gray-100 dark:bg-gray-800 z-40" id='home'>
         <img className="w-full h-full object-cover top-0 left-0 absolute dark:opacity-0" src={whiteModePattern} alt="white mode pattern" />
         <img className="w-full h-full object-cover top-0 left-0 absolute opacity-0 dark:opacity-100" src={darkModePattern} alt="white mode pattern" />
         <div className="w-full h-full">
@@ -24,24 +25,30 @@ const Banner = () => {
                     </h1>
                     <ReactTyped className='text-5xl' strings={['A Software Engineer!', 'A React Developer!', 'A Python Developer!', 'A Full Stack Developer!', 'A JS/TS Developer!']} typeSpeed={80} backSpeed={100} loop/>
                     <div className='flex items-center mt-8'>
-                        <button 
-                            className="items-center bg-purple-500 hover:bg-purple-700 text-gray-50 font-bold rounded-lg px-6 py-2 text-3xl dark:bg-yellow-500 dark:text-gray-800 dark:hover:bg-yellow-700 transition-all duration-500">
-                            Resume <LuExternalLink className='inline-block' size={30} />
-                        </button>
+                        <motion.div 
+                            className="items-center bg-purple-500 text-gray-50 font-bold rounded-lg px-6 py-2 text-3xl cursor-pointer dark:bg-yellow-500 dark:text-gray-800"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            transition={{ type: "spring", stiffness: 200, damping: 12 }}    
+                        >
+                            <a href="">
+                                Resume <LuExternalLink className='inline-block' size={30} />
+                            </a>
+                        </motion.div>
                     <div className=' items-center flex space-x-4 ml-10'>
-                        <a href="https://github.com/GabrielEger2" target="_blank">
+                        <a href="https://github.com/GabrielEger2" target="_blank" className='hover:scale-125 transition-all duration-300'>
                             <AiFillGithub size={40} />
                         </a>
-                        <a href="https://www.linkedin.com/in/gabriel-eger-11434b157/" target="_blank">
+                        <a href="https://www.linkedin.com/in/gabriel-eger-11434b157/" target="_blank" className='hover:scale-125 transition-all duration-300'>
                             <AiFillLinkedin size={40} />
                         </a>
-                        <a href="https://leetcode.com/GabrielEger2/" target="_blank">
-                                        <SiLeetcode size={40} />
+                        <a href="https://leetcode.com/GabrielEger2/" target="_blank" className='hover:scale-125 transition-all duration-300'>
+                            <SiLeetcode size={40} />
                         </a>
                     </div>
                 </div>
             </div>
-            <div className="hidden md:block pt-8 ml-O lg:ml-16 z-50">
+            <div className="hidden md:block pt-8 ml-O lg:ml-16 z-40">
                 <img
                     src={portrait}
                     alt="Movie GIF"

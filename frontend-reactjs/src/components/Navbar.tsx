@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MdClose } from 'react-icons/md';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
-import { motion } from 'framer-motion';
+import { motion, useScroll } from "framer-motion";
 
 import stripsWhiteIcon from '../assets/imgs/stripsWhiteIcon.png';
 import stripsDarkIcon from '../assets/imgs/stripsDarkIcon.png';
@@ -11,7 +11,42 @@ const Navbar = () => {
     const [nav, setNav] = useState(false); // Setting up a state variable for the navigation menu
     const [mobileNav, setMobileNav] = useState(false); // Setting up a state variable for the mobile navigation menu
     const [scrollPos, setScrollPos] = useState(0);
-    const [darkMode, setDarkMode] = useState('dark');
+    const [initialDarkMode, setInitialDarkMode] = useState('');
+    const [darkMode, setDarkMode] = useState(initialDarkMode);
+    const { scrollYProgress } = useScroll();
+
+    useEffect(() => {
+        const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        const initialMode = darkModeQuery.matches ? 'dark' : 'light';
+        setInitialDarkMode(initialMode);
+        setDarkMode(initialMode);
+      }, []);
+
+    useEffect(() => {
+        const handleLinkClick = (event: MouseEvent) => {
+          event.preventDefault();
+          const target = event.target as HTMLAnchorElement;
+          const element = document.querySelector(target.hash) as HTMLElement;
+          if (element) {
+            const topOffset = element.offsetTop;
+            window.scrollTo({
+              top: topOffset - 60,
+              behavior: 'smooth',
+            });
+          }
+        };
+      
+        const links = document.querySelectorAll('a[href^="#"]');
+        links.forEach((link) => {
+          link.addEventListener('click', handleLinkClick as EventListener);
+        });
+      
+        return () => {
+          links.forEach((link) => {
+            link.removeEventListener('click', handleLinkClick as EventListener);
+          });
+        };
+    }, []);
 
     const handleMobileNav = () => {
         setMobileNav(!mobileNav); // Toggling the value of the navigation menu state variable
@@ -47,13 +82,13 @@ const Navbar = () => {
     };
 
     return (
-        <header>
+        <header className='z-50'>
             <motion.div
                 className={`fixed top-0 w-full z-50 shadow-lg ${
                     nav ? 'h-16' : 'h-20' 
                 } transition-all duration-500 ease-in-out`}
             >
-                <div className='bg-gray-100 border-b border-gray-300 dark:bg-gray-900 dark:border-gray-950 items-center h-full'>
+                <div className='bg-gray-100 border-gray-300 dark:bg-gray-900 dark:border-gray-950 items-center h-full'> 
                     <div className="flex justify-between items-center h-full max-w-[1400px] mx-auto px-6 font-bold">
                         <a href="#home" className='text-gray-800 text-4xl dark:text-gray-50 flex items-center'>
                             <div className='pr-2'>
@@ -94,6 +129,9 @@ const Navbar = () => {
                             {!mobileNav ? <AiOutlineMenu size={30} /> : <MdClose size={30} />}
                         </div>
                     </div>
+                </div>
+                <div className='bg-gray-300 dark:bg-gray-950 shadow-lg'>
+                    <motion.div className='h-0.5 bg-purple-500 dark:bg-yellow-500' style={{ transformOrigin: "left", scaleX: scrollYProgress }} />
                 </div>
             </motion.div>
         </header>

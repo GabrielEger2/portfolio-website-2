@@ -38,17 +38,17 @@ const SkillsCarousel = () => {
               return (
                 <motion.div
                   key={element.id}
-                  className='w-[120px] h-[120px] cursor-pointer overflow-hidden flex justify-center items-center transition-all ease-in-out duration-300'
+                  className='w-[120px] h-[120px] overflow-hidden flex justify-center items-center transition-all ease-in-out duration-300'
                   whileHover={{ scale: 4/3 }}
                 >
                   <a href={element.skillsLink} target='_blank'>
                     <img
-                      className='h-[90px] w-[90px] object-cover rounded-xl pointer-events-none dark:hidden'
+                      className='h-[90px] w-[90px] object-cover rounded-xl pointer-events-none cursor-pointer dark:hidden'
                       src={urlFor(element.skillsImage).toString()}
                       alt={element.skillsTitle}
                     />
                     <img
-                      className='h-[90px] w-[90px] object-cover rounded-xl pointer-events-none hidden dark:block'
+                      className='h-[90px] w-[90px] object-cover rounded-xl pointer-events-none cursor-pointer hidden dark:block'
                       src={urlFor(element.skillsImageDark).toString()}
                       alt={element.skillsTitle}
                     />

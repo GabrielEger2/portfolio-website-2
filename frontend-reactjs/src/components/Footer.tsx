@@ -1,21 +1,14 @@
 import stripsWhiteIcon from '../assets/imgs/stripsWhiteIcon.png';
 import stripsDarkIcon from '../assets/imgs/stripsDarkIcon.png';
 
-import { AiOutlineToTop } from 'react-icons/ai';
-
 const Footer = () => {
   // Get the current year
   const current_year = new Date().getFullYear();
 
   return (
     <div>   
-        <footer className="bg-gray-200 dark:bg-gray-950">
+        <footer className="bg-gray-100 dark:bg-gray-900 border-gray-300 dark:border-gray-950 border-t">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-                <div className='flex justify-center text-gray-100 dark:text-gray-800'>
-                    <a href="#home" className='p-2 rounded-full bg-purple-500 hover:bg-purple-700 dark:bg-yellow-500 dark:hover:bg-yellow-600 transition-all duration-500 absolute -translate-y-14'>
-                        <AiOutlineToTop size={40}/>
-                    </a>
-                </div>
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <a href="" className="flex items-center">
@@ -29,7 +22,7 @@ const Footer = () => {
                         <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-gray-100">Project</h2>
                         <ul className="text-gray-500 dark:text-gray-400 font-medium">
                             <li className="mb-4">
-                                <a href="https://www.themoviedb.org/" className="hover:underline">Gitub</a>
+                                <a href="https://www.themoviedb.org/" className="hover:underline">Github</a>
                             </li>
                             <li>
                                 <a href="https://tailwindcss.com/" className="hover:underline">Overview</a>

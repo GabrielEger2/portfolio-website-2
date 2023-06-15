@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
-import { LuExternalLink } from 'react-icons/lu';
+import { HiOutlineChevronDoubleDown } from 'react-icons/hi';
 
 import ProfilePic from '../assets/imgs/GabrielProfilePic.png'
 import ProfilePicBlur from '../assets/imgs/GabrielProfilePicBlur.png'
@@ -18,7 +18,7 @@ const About = () => {
   return (
     <div className='bg-gray-50 dark:bg-gray-800 z-40' id='about'>
         <div className='flex justify-center'>
-            <h2 className='text-lg text-center text-gray-400 dark:text-gray-500 mt-10 mb-12'>
+            <h2 className='text-lg text-center text-gray-400 dark:text-gray-500 my-10'>
                 Get to know <br />
                 <span className='text-gray-800 dark:text-gray-100 text-3xl mt-4 font-bold'>About Me</span>
             </h2>
@@ -68,7 +68,7 @@ const About = () => {
                     transition={{ type: "spring", stiffness: 200, damping: 12 }} 
                 >
                     <a href="">
-                        Contact <LuExternalLink className='inline-block' size={30} />
+                        Contact <HiOutlineChevronDoubleDown className='inline-block' size={30} />
                     </a>
                 </motion.div>
             </div>

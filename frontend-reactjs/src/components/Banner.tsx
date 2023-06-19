@@ -8,6 +8,12 @@ import { SiLeetcode } from 'react-icons/si';
 import whiteModePattern from '../assets/imgs/whiteModePattern.png';
 import darkModePattern from '../assets/imgs/darkModePattern.png';
 import portrait from '../assets/imgs/GabrielPhoto.png';
+import elipse from '../assets/imgs/elipse.png';
+import elipseDark from '../assets/imgs/elipseDark.png';
+import halfElipse from '../assets/imgs/halfElipse.png';
+import halfElipseDark from '../assets/imgs/halfElipseDark.png';
+
+
 
 const Banner = () => {
   return (
@@ -15,7 +21,7 @@ const Banner = () => {
         <img className="w-full h-full object-cover top-0 left-0 absolute dark:opacity-0" src={whiteModePattern} alt="white mode pattern" />
         <img className="w-full h-full object-cover top-0 left-0 absolute opacity-0 dark:opacity-100" src={darkModePattern} alt="white mode pattern" />
         <div className="w-full h-full">
-            <div className="flex max-w-[1100px] h-full items-center mx-auto justify-between">
+            <div className="flex max-w-[1100px] h-full items-center mx-auto justify-between px-4">
                 <div className="md:relative -translate-y-4 pt-4 md:pt-0 flex-grow mr-O text-shadow text-5xl font-bold roboto-condensed text-gray-800 dark:text-gray-50">
                     <h1 className="mt-2 z-50">
                         Hello World! I'm
@@ -48,14 +54,37 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-            <div className="hidden md:block pt-8 ml-O lg:ml-16 z-40">
+            <div className="hidden md:block z-40 justify-center content-center pt-4">
+              <div className="ml-auto relative">
+                <motion.div
+                  initial={{ x: -240, y: -100  }}
+                  animate={{ x: -140 }}
+                  transition={{ duration: 8, repeat: Infinity, repeatType: "mirror" }} // Duration of 1 second and yoyo loop
+                  className=" max-h-[800px] w-[800px] z-10"
+                  style={{ position: "absolute" }}
+                >
+                  <img src={elipse} alt="" className=' dark:hidden' />
+                  <img src={elipseDark} alt="" className='hidden dark:block' />
+                </motion.div>
+                <motion.div
+                  initial={{ x: -240, y: -100 }}
+                  animate={{ x: -140 }} 
+                  transition={{ duration: 8, repeat: Infinity, repeatType: "mirror" }} // Duration of 1 second and yoyo loop
+                  className=" max-h-[800px] w-[800px] z-50"
+                  style={{ position: "absolute" }}
+                >
+                  <img src={halfElipse} alt="" className='dark:hidden' />
+                  <img src={halfElipseDark} alt="" className='hidden dark:block' />
+                </motion.div>
                 <img
-                    src={portrait}
-                    alt="Movie GIF"
-                    className="rounded-xll h-[65vh] max-h-[600px] w-[400px] object-cover ml-auto"
+                  src={portrait}
+                  alt="Movie GIF"
+                  className="absolute rounded-tl-xll rounded-br-xll max-h-[600px] w-[400px] object-cover ml-auto z-30"
+                  style={{ position: "relative" }}
                 />
+              </div>
             </div>
-            </div>
+          </div>
         </div>
     </div>
   )

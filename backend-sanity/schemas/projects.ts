@@ -29,6 +29,16 @@ export default {
             title: 'Project Tech Stack',
         },
         {
+            name: 'projectFilter',
+            type: 'string',
+            title: 'Project Filter',
+        },
+        {
+            name: 'projectHighLighted',
+            type: 'boolean',
+            title: 'Project High Lighted',
+        },
+        {
             name: 'projectDescription',
             type: 'string',
             title: 'Project Description',

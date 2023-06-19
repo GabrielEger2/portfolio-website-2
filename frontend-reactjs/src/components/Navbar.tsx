@@ -88,7 +88,7 @@ const Navbar = () => {
                     nav ? 'h-16' : 'h-20' 
                 } transition-all duration-500 ease-in-out`}
             >
-                <div className='bg-gray-100 border-gray-300 dark:bg-gray-900 dark:border-gray-950 items-center h-full'> 
+                <div className='bg-gray-100 border-b-2 border-gray-300 dark:bg-gray-900 dark:border-gray-950 items-center h-full'> 
                     <div className="flex justify-between items-center h-full max-w-[1400px] mx-auto px-6 font-bold">
                         <a href="#home" className='text-gray-800 text-4xl dark:text-gray-50 flex items-center'>
                             <div className='pr-2'>
@@ -129,9 +129,6 @@ const Navbar = () => {
                             {!mobileNav ? <AiOutlineMenu size={30} /> : <MdClose size={30} />}
                         </div>
                     </div>
-                </div>
-                <div className='bg-gray-300 dark:bg-gray-950 shadow-lg'>
-                    <motion.div className='h-0.5 bg-purple-500 dark:bg-yellow-500' style={{ transformOrigin: "left", scaleX: scrollYProgress }} />
                 </div>
             </motion.div>
         </header>

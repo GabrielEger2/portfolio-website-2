@@ -13,8 +13,8 @@ const MotionCard = ({ id, position, type, isOpen, onClick }) => {
     text = 'Some "useful" information about me';
   } else if (type === 'hobbies') {
     icon = <FaUserAstronaut size={40} />;
-    title = 'Stuff I like to do';
-    text = 'What I usually do in my free time';
+    title = 'Tech stack';
+    text = 'Some of the technologies I use';
   } else {
     icon = <FaUserGraduate size={40} />;
     title = 'My education';

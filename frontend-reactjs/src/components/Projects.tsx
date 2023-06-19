@@ -1,28 +1,34 @@
 import { useEffect, useState } from 'react';
 import { client, urlFor } from '../client';
-
 import { motion, AnimatePresence } from 'framer-motion';
+import HighlightedProjectCard from './HighlightedProjectCard';
 
 const Projects = () => {
   const [projectsData, setProjectsData] = useState<any[]>([]);
   const [filteredProjects, setFilteredProjects] = useState<any[]>([]);
+  const [HighLightedProjects, setHighLightedProjects] = useState<any[]>([]);
   const [active, setActive] = useState('All');	
 
   useEffect(() => {
-  const query = '*[_type == "projects"]';
+    const query = '*[_type == "projects"]';
 
-  client.fetch(query).then((data) => {
-    setProjectsData(data);
-    setFilteredProjects(data);
+    client.fetch(query).then((data) => {
+      setProjectsData(data);
+      setFilteredProjects(data);
     });
   }, []);
+
+  useEffect(() => {
+    const filteredProjects = projectsData.filter((project) => project.projectHighLighted === true);
+    setHighLightedProjects(filteredProjects);
+  }, [projectsData]);
 
   useEffect(() => {
     if (active === 'All') {
       setFilteredProjects(projectsData);
       return;
     }
-    const filteredProjects = projectsData.filter((project) => project.projectTechStack.includes(active));
+    const filteredProjects = projectsData.filter((project) => project.projectFilter.includes(active));
     setFilteredProjects(filteredProjects);
   }, [active]);
 
@@ -35,7 +41,25 @@ const Projects = () => {
         </h2>
       </div>
       <div className='px-10 max-w-[1300px] h-full mx-auto justify-center'>
-        <div className='text-white space-x-4 flex justify-center mb-4'>
+        <div className='flex flex-col space-y-4'>
+          {HighLightedProjects.map((project, index) => (
+            <div
+              key={project.projectTitle}
+              className={`flex ${index % 2 === 0 ? '' : 'flex-row-reverse'}`}
+            >
+              <HighlightedProjectCard 
+                index={index}
+                title={project.projectTitle}
+                description={project.projectDescription}
+                image={urlFor(project.projectImage).toString()}
+                github={project.projectGithubLink}
+                link={project.projectWebLink}
+                techStack={project.projectTechStack}
+              />
+            </div>
+          ))}
+        </div>
+        <div className='space-x-4 flex justify-center mb-4 mt-10'>
           <motion.div 
             className={`items-center justify-center cursor-pointer font-bold rounded-lg px-3 py-1 text-xl ${
               active === 'All' ? 'bg-purple-500 text-gray-50 dark:bg-yellow-500 dark:text-gray-800' : 'border text-gray-800 border-purple-500 dark:text-gray-100 dark:border-yellow-500'
@@ -81,7 +105,9 @@ const Projects = () => {
                 transition={{ duration: 0.25 }}
               >
                 <AnimatePresence>
-                  <img src={urlFor(element.projectImage).toString()} alt={element.projectTitle} className='w-[400px] h-[200px] object-cover rounded-2xl border shadow-lg border-gray-300 dark:border-gray-950' />
+                  <div>
+                    <img src={urlFor(element.projectImage).toString()} alt={element.projectTitle} className='w-[400px] h-[225px] object-cover rounded-2xl border shadow-lg border-gray-300 dark:border-gray-950' />
+                  </div>
                 </AnimatePresence>
               </motion.div>
             )})

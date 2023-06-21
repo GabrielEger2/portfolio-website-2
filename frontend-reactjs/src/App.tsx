@@ -4,6 +4,7 @@ import Banner from "./components/Banner"
 import About from "./components/About"
 import SkillsCarousel from "./components/SkillsCarousel"
 import Projects from "./components/Projects"
+import Contact from "./components/Contact"
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <About />
       <SkillsCarousel />
       <Projects />
+      <Contact />
       <Footer />
     </div>
   )

@@ -9,11 +9,11 @@ import MotionCard from '../components/MotionCard';
 
 
 const About = () => {
-    const [openCardId, setOpenCardId] = useState(null);
-      
-    const handleCardClick = (cardId) => {
-      setOpenCardId(cardId);
-    };
+    const [openCardId, setOpenCardId] = useState<number | null>(null);
+
+    const handleCardClick = (arg: number | null) => {
+        setOpenCardId(arg);
+      };
 
   return (
     <div className='bg-gray-50 dark:bg-gray-800 z-40' id='about'>

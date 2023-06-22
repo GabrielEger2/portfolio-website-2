@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MdClose } from 'react-icons/md';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 import stripsWhiteIcon from '../assets/imgs/stripsWhiteIcon.png';
 import stripsDarkIcon from '../assets/imgs/stripsDarkIcon.png';
@@ -13,7 +13,6 @@ const Navbar = () => {
     const [scrollPos, setScrollPos] = useState(0);
     const [initialDarkMode, setInitialDarkMode] = useState('');
     const [darkMode, setDarkMode] = useState(initialDarkMode);
-    const { scrollYProgress } = useScroll();
 
     useEffect(() => {
         const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');

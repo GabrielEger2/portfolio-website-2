@@ -1,7 +1,14 @@
 import { motion } from 'framer-motion';
 import { FaUser, FaUserAstronaut, FaUserGraduate } from 'react-icons/fa';
 
-const MotionCard = ({ id, position, type, isOpen, onClick }) => {
+const MotionCard = ({ id, position, type, isOpen, onClick }: {
+  id: number;
+  position: string;
+  type: string;
+  isOpen: boolean;
+  onClick: (arg: number | null) => void; // Update prop definition
+}) => {
+
   let icon;
   let title;
   let text;
@@ -22,7 +29,7 @@ const MotionCard = ({ id, position, type, isOpen, onClick }) => {
   }
 
   const handleClick = () => {
-    onClick(isOpen ? null : id);
+    onClick(isOpen ? null : id); // Pass the argument based on the updated prop definition
   };
 
   return (

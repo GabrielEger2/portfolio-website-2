@@ -1,6 +1,16 @@
 import { AiOutlineLink, AiOutlineGithub } from 'react-icons/ai';
 
-const HighlightedProjectCard = (props) => {
+interface HighlightedProjectCardProps {
+  title: string;
+  description: string;
+  image: string;
+  techStack: string;
+  github?: string;
+  link?: string;
+  index: number;
+}
+
+const HighlightedProjectCard = (props: HighlightedProjectCardProps) => {
   return (
     <div>
         <div className="flex flex-col items-center bg-gray-100 border border-gray-300 rounded-lg md:flex-row md:max-w-3xl  dark:bg-gray-800 dark:border-gray-950 shadow-lg">

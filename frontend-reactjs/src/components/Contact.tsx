@@ -16,14 +16,14 @@ const Contact = () => {
         <div className="text-center lg:text-left pb-10 text-gray-800 dark:text-gray-100">
             <div className="container mx-auto xl:px-32">
                 <div className="grid lg:grid-cols-2 gap-12">
-                    <div className="mt-6 md:mt-12 lg:mt-0">
+                    <div className="md:mt-4 lg:mt-0">
                         <h1
                             className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-6  md:mb-12"
                             >
                             Don't be shy, hit me up <MdOutlineWavingHand size={60} className='inline-block text-purple-500 dark:text-yellow-500' />
                         </h1>
                         <div className='md:mb-4 lead text-2xl font-bold md:grid md:grid-row-3 md:space-y-4'>
-                            <p className='flex items-center mt-4'>
+                            <p className='flex items-center lg:mt-4 justify-center lg:justify-start'>
                                 <MdOutlineEmail size={40} className='inline-block text-purple-500 dark:text-yellow-500' />: gabriel_eger01@hotmail.com
                             </p>
                             <p>

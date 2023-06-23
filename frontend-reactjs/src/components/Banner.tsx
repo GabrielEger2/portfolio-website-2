@@ -54,11 +54,11 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-            <div className="hidden md:block z-40 justify-center content-center pt-4">
+            <div className="hidden lg:block z-40 justify-center content-center pt-4">
               <div className="ml-auto relative">
                 <motion.div
                   initial={{ x: -240, y: -100  }}
-                  animate={{ x: -140 }}
+                  animate={{ x: -160 }}
                   transition={{ duration: 8, repeat: Infinity, repeatType: "mirror" }} // Duration of 1 second and yoyo loop
                   className=" max-h-[800px] w-[800px] z-10"
                   style={{ position: "absolute" }}
@@ -68,7 +68,7 @@ const Banner = () => {
                 </motion.div>
                 <motion.div
                   initial={{ x: -240, y: -100 }}
-                  animate={{ x: -140 }} 
+                  animate={{ x: -160 }} 
                   transition={{ duration: 8, repeat: Infinity, repeatType: "mirror" }} // Duration of 1 second and yoyo loop
                   className=" max-h-[800px] w-[800px] z-50"
                   style={{ position: "absolute" }}

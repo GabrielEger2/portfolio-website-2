@@ -38,7 +38,7 @@ const MotionCard = ({ id, position, type, isOpen, onClick }: {
         transition={{ layout: { duration: 1, type: 'spring' } }}
         layout
         onClick={handleClick}
-        className={`bg-gray-100 border pb-5 px-2 border-gray-300 rounded-xl cursor-pointer shadow-lg dark:bg-gray-800 dark:border-gray-950 ${isOpen ? 'z-10' : ''}`}
+        className={`bg-gray-100 border pb-5 md:px-2 border-gray-300 rounded-xl cursor-pointer shadow-lg dark:bg-gray-800 dark:border-gray-950 ${isOpen ? 'z-10' : ''}`}
         style={{ position: isOpen ? 'absolute' : 'static' }}
       >
         {isOpen ? (
@@ -90,7 +90,7 @@ const MotionCard = ({ id, position, type, isOpen, onClick }: {
         ) : (
           <motion.h2
             layout='position'
-            className='font-bold w-48 h-32 text-center text-xl text-gray-800 dark:text-gray-200'
+            className='font-bold w-32 md:w-48 h-32 text-md text-center md:text-xl text-gray-800 dark:text-gray-200'
           >
             <div className='my-4 flex justify-center'>
               {icon}

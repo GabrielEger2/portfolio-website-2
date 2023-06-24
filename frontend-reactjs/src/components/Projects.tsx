@@ -33,7 +33,7 @@ const Projects = () => {
   }, [active]);
 
   return (
-    <div className='bg-gray-5 bvb 0 dark:bg-gray-800' id='projects'>
+    <div className='bg-gray-50 dark:bg-gray-800' id='projects'>
       <div className='flex justify-center'>
         <h2 className='text-lg text-center text-gray-400 dark:text-gray-500 my-10'>
           Some of my <br />

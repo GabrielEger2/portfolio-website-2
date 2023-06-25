@@ -13,7 +13,7 @@ interface HighlightedProjectCardProps {
 const HighlightedProjectCard = (props: HighlightedProjectCardProps) => {
   return (
     <div>
-        <div className="flex flex-col items-center bg-gray-100 border border-gray-300 rounded-lg md:flex-row md:max-w-3xl  dark:bg-gray-800 dark:border-gray-950 shadow-lg">
+        <div className="flex flex-col items-center bg-gray-200 border border-gray-300 rounded-lg md:flex-row md:max-w-3xl dark:bg-gray-800 dark:border-gray-950 shadow-lg">
           <img className={`object-cover w-full rounded-t-lg h-[175px] md:w-[311px] md:rounded-none md:rounded-l-lg md:${props.index % 2 === 0 ? '' : 'hidden'}`} src={props.image} alt={props.title}/>
             <div className="flex flex-col justify-between px-3 py-2 leading-normal">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200">{props.title}</h5>

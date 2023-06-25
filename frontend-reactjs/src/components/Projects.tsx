@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { client, urlFor } from '../client';
 import { motion, AnimatePresence } from 'framer-motion';
 import HighlightedProjectCard from './HighlightedProjectCard';
+import { AiOutlineLink, AiOutlineGithub } from 'react-icons/ai';
 
 const Projects = () => {
   const [projectsData, setProjectsData] = useState<any[]>([]);
@@ -33,7 +34,7 @@ const Projects = () => {
   }, [active]);
 
   return (
-    <div className='bg-gray-50 dark:bg-gray-800' id='projects'>
+    <div className='bg-gray-50 dark:bg-gray-800 pb-4 md:pb-0' id='projects'>
       <div className='flex justify-center'>
         <h2 className='text-lg text-center text-gray-400 dark:text-gray-500 my-10'>
           Some of my <br />
@@ -105,8 +106,20 @@ const Projects = () => {
                 transition={{ duration: 0.25 }}
               >
                 <AnimatePresence>
-                  <div>
-                    <img src={urlFor(element.projectImage).toString()} alt={element.projectTitle} className='w-[400px] h-[225px] object-cover rounded-2xl border shadow-lg border-gray-300 dark:border-gray-950' />
+                  <div className='rounded-2xl border shadow-lg max-w-[400px] bg-gray-200 border-gray-300 dark:border-gray-950 dark:bg-gray-800'>
+                    <img src={urlFor(element.projectImage).toString()} alt={element.projectTitle} className='w-[400px] h-[225px] object-cover rounded-t-2xl' />
+                    <div className='flex justify-center space-x-4 my-2 text-gray-800 dark:text-gray-200'>
+                      {element.projectGithubLink && (
+                        <a href={element.projectGithubLink} target='_blank'>
+                          <AiOutlineGithub size={30} className=' hover:scale-125 ease-in-out transition-all duration-500' />
+                        </a>
+                      )}
+                      {element.projectWebLink && (
+                        <a href={element.projectWebLink} target='_blank'>
+                          <AiOutlineLink size={30} className='hover:scale-125 ease-in-out transition-all duration-500' />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </AnimatePresence>
               </motion.div>

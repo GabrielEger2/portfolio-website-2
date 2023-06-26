@@ -55,7 +55,7 @@ const Banner = () => {
                 </div>
             </div>
             <div className="hidden lg:block z-40 justify-center items-center pt-4">
-              <div>
+              <div className='relative ml-auto'>
                 <motion.div
                   initial={{ x: -220, y: -100  }}
                   animate={{ x: -160 }}

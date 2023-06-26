@@ -9,7 +9,7 @@ import Contact from "./components/Contact"
 function App() {
 
   return (
-    <div>
+    <div style={{ overflowX: 'hidden' }}>
       <Navbar />
       <Banner />
       <About />

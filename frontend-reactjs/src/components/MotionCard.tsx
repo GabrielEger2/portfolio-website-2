@@ -64,7 +64,7 @@ const MotionCard = ({ id, position, type, isOpen, onClick }: {
   };
 
   return (
-    <div className={`flex ${position === 'center' ? 'justify-center text-center' : (position === 'right' ? 'justify-end text-right' : 'justify-start text-left')}`}>
+    <div className={`flex ${position === 'center' ? `justify-center text-center ${isOpen ? 'pr-2' : ''}` : (position === 'right' ? 'justify-end text-right' : 'justify-start text-left')}`}>
       <motion.div
         transition={{ layout: { duration: 1, type: 'spring' } }}
         layout
@@ -74,10 +74,10 @@ const MotionCard = ({ id, position, type, isOpen, onClick }: {
       >
         {isOpen ? (
           <motion.div>
-            <div>
+            <div style={{ overflowX: 'hidden', overflowY: 'hidden' }}>
               <motion.h2
                 layout='position'
-                className={`font-bold  items-center text-center justify-center pt-1 ${position === 'right' || position === 'left' ? 'flex' : ''} space-x-4 text-xl text-gray-800 dark:text-gray-100`}
+                className={`font-bold items-center text-center justify-center pt-1 ${position === 'right' || position === 'left' ? 'flex' : ''} space-x-4 text-xl text-gray-800 dark:text-gray-100`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}

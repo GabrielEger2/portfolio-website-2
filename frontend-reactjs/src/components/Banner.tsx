@@ -21,7 +21,7 @@ const Banner = () => {
         <img className="w-full h-full object-cover top-0 left-0 absolute dark:opacity-0" src={whiteModePattern} alt="white mode pattern" />
         <img className="w-full h-full object-cover top-0 left-0 absolute opacity-0 dark:opacity-100" src={darkModePattern} alt="white mode pattern" />
         <div className="w-full h-full">
-            <div className="flex max-w-[1100px] h-full items-center mx-auto justify-between px-4">
+            <div className="flex max-w-[1100px] h-full items-center mx-auto justify-center lg:justify-between px-4 text-center lg:text-left">
                 <div className="md:relative -translate-y-4 pt-4 md:pt-0 flex-grow mr-O text-shadow text-5xl font-bold roboto-condensed text-gray-800 dark:text-gray-50">
                     <h1 className="mt-2 z-50">
                         Hello World! I'm
@@ -29,8 +29,8 @@ const Banner = () => {
                     <h1 className='text-8xl my-4'>
                         Gabriel <span className='text-purple-500 dark:text-yellow-500'>Eger</span>
                     </h1>
-                    <ReactTyped className='text-5xl' strings={['A Software Engineer!', 'A React Developer!', 'A Python Developer!', 'A Full Stack Developer!', 'A JS/TS Developer!']} typeSpeed={80} backSpeed={100} loop/>
-                    <div className='flex items-center mt-8'>
+                    <ReactTyped className='lg:text-5xl sm:text-4xl text-3xl' strings={['A Software Engineer!', 'A React Developer!', 'A Python Developer!', 'A Full Stack Developer!', 'A JS/TS Developer!']} typeSpeed={80} backSpeed={100} loop/>
+                    <div className='flex-col flex lg:flex-row items-center mt-8'>
                         <motion.div 
                             className="items-center bg-purple-500 text-gray-50 font-bold rounded-lg px-6 py-2 text-3xl cursor-pointer dark:bg-yellow-500 dark:text-gray-800"
                             whileHover={{ scale: 1.1 }}
@@ -41,7 +41,7 @@ const Banner = () => {
                                 Resume <LuExternalLink className='inline-block' size={30} />
                             </a>
                         </motion.div>
-                    <div className=' items-center flex space-x-4 ml-10'>
+                    <div className=' items-center flex space-x-4 lg:ml-10 justify-center lg:justify-normal pt-6 lg:pt-0'>
                         <a href="https://github.com/GabrielEger2" target="_blank" className='hover:scale-125 transition-all duration-300'>
                             <AiFillGithub size={40} />
                         </a>
@@ -54,24 +54,22 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-            <div className="hidden lg:block z-40 justify-center content-center pt-4">
-              <div className="ml-auto relative">
+            <div className="hidden lg:block z-40 justify-center items-center pt-4">
+              <div>
                 <motion.div
-                  initial={{ x: -240, y: -100  }}
+                  initial={{ x: -220, y: -100  }}
                   animate={{ x: -160 }}
-                  transition={{ duration: 8, repeat: Infinity, repeatType: "mirror" }} // Duration of 1 second and yoyo loop
-                  className=" max-h-[800px] w-[800px] z-10"
-                  style={{ position: "absolute" }}
+                  transition={{ duration: 5, repeat: Infinity, repeatType: "mirror" }} // Duration of 1 second and yoyo loop
+                  className="w-[800px] absolute z-10"
                 >
                   <img src={elipse} alt="" className=' dark:hidden' />
                   <img src={elipseDark} alt="" className='hidden dark:block' />
                 </motion.div>
                 <motion.div
-                  initial={{ x: -240, y: -100 }}
+                  initial={{ x: -220, y: -100 }}
                   animate={{ x: -160 }} 
-                  transition={{ duration: 8, repeat: Infinity, repeatType: "mirror" }} // Duration of 1 second and yoyo loop
-                  className=" max-h-[800px] w-[800px] z-50"
-                  style={{ position: "absolute" }}
+                  transition={{ duration: 5, repeat: Infinity, repeatType: "mirror" }} // Duration of 1 second and yoyo loop
+                  className="w-[800px] absolute z-50"
                 >
                   <img src={halfElipse} alt="" className='dark:hidden' />
                   <img src={halfElipseDark} alt="" className='hidden dark:block' />
@@ -79,8 +77,7 @@ const Banner = () => {
                 <img
                   src={portrait}
                   alt="Movie GIF"
-                  className="absolute rounded-tl-xll rounded-br-xll max-h-[600px] w-[400px] object-cover ml-auto z-30"
-                  style={{ position: "relative" }}
+                  className="relative rounded-tl-xll rounded-br-xll w-[400px] object-cover ml-auto z-30"
                 />
               </div>
             </div>

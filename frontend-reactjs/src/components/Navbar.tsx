@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react';
-import { MdClose } from 'react-icons/md';
-import { AiOutlineMenu } from 'react-icons/ai';
 import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
-import { motion } from "framer-motion";
+import { motion, useCycle, AnimatePresence } from "framer-motion";
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 
 import stripsWhiteIcon from '../assets/imgs/stripsWhiteIcon.png';
 import stripsDarkIcon from '../assets/imgs/stripsDarkIcon.png';
 
 const Navbar = () => {
     const [nav, setNav] = useState(false); // Setting up a state variable for the navigation menu
-    const [mobileNav, setMobileNav] = useState(false); // Setting up a state variable for the mobile navigation menu
+    const [mobileNav, toggleMobileNav] = useCycle(false, true);
     const [scrollPos, setScrollPos] = useState(0);
     const [initialDarkMode, setInitialDarkMode] = useState('');
     const [darkMode, setDarkMode] = useState(initialDarkMode);
@@ -23,16 +22,16 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleLinkClick = (event: MouseEvent) => {
-          event.preventDefault();
-          const target = event.target as HTMLAnchorElement;
-          const element = document.querySelector(target.hash) as HTMLElement;
-          if (element) {
-            const topOffset = element.offsetTop;
-            window.scrollTo({
-              top: topOffset - 60,
-              behavior: 'smooth',
-            });
-          }
+            const target = event.target as HTMLAnchorElement;
+            const element = document.querySelector(target.hash) as HTMLElement;
+            if (element) {
+              event.preventDefault();
+              const topOffset = element.offsetTop;
+              window.scrollTo({
+                top: topOffset - 60,
+                behavior: 'smooth',
+              });
+            }
         };
       
         const links = document.querySelectorAll('a[href^="#"]');
@@ -46,10 +45,6 @@ const Navbar = () => {
           });
         };
     }, []);
-
-    const handleMobileNav = () => {
-        setMobileNav(!mobileNav); // Toggling the value of the navigation menu state variable
-    };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -124,12 +119,132 @@ const Navbar = () => {
                                 </button>
                             </label>
                         </ul>
-                        <div className="text-gray-800 p-1 rounded-lg md:hidden cursor-pointer absolute right-6 border-gray-800 border" onClick={handleMobileNav}>
-                            {!mobileNav ? <AiOutlineMenu size={30} /> : <MdClose size={30} />}
-                        </div>
+                        <motion.button
+                            animate={mobileNav ? 'open' : 'closed'}
+                            onClick={() => toggleMobileNav()}
+                            className='flex flex-col space-y-1 md:hidden p-1'
+                        >
+                            <motion.span 
+                                variants={{
+                                    closed: {rotate: 0, y: 0},
+                                    open: {rotate: 45, y: 8}
+                                }}
+                                className='w-7 h-1 bg-gray-800 block dark:bg-gray-100'
+                            ></motion.span>
+                            <motion.span 
+                                variants={{
+                                    closed: {opacity: 1 },
+                                    open: {opacity: 0, transition: { duration: 0 }}
+                                }}
+                                className='w-7 h-1 bg-gray-800 block dark:bg-gray-100'
+                            ></motion.span>
+                            <motion.span 
+                                variants={{
+                                    closed: {rotate: 0, y:0},
+                                    open: {rotate: -45, y:-8}
+                                }}
+                                className='w-7 h-1 bg-gray-800 block dark:bg-gray-100'
+                            ></motion.span>
+                        </motion.button>
                     </div>
                 </div>
             </motion.div>
+            <AnimatePresence>
+                {mobileNav && (
+                    <motion.div
+                        variants={{
+                            open: {
+                            x: "0%",
+                            transition: {
+                                when: "beforeChildren",
+                                type: "spring",
+                                bounce: 0.12,
+                                duration: .3
+                            }
+                            },
+                            closed: {
+                            x: "-100%",
+                            transition: {
+                                when: "beforeChildren",
+                                type: "spring",
+                                bounce: 0.12,
+                                duration: .3
+                            }
+                            }
+                        }}
+                        initial="closed"
+                        animate="open"
+                        exit="closed"
+                        className="fixed w-[70vw] sm:w-[50vw] inset-0 bg-gray-100 border-r-2 border-gray-300 z-50 md:hidden p-6 container flex flex-col shadow-lg dark:bg-gray-900 dark:border-gray-950"
+                    >
+                    <motion.div
+                        variants={{
+                            open: {
+                            y: "0%",
+                            opacity:1
+                            },
+                            closed: {
+                            y: "12%",
+                            opacity: 0
+                            }
+                        }}
+                    >
+                        <a href="#home" className="text-gray-800 text-4xl dark:text-gray-100 flex font-bold items-center pb-8 justify-center">
+                        &lt;Gabriel /&gt;
+                        </a>
+                        <ul className="text-gray-800 text-3xl space-y-6 dark:text-gray-100 font-bold">
+                            <li className="group w-[82px]">
+                                <a href="#home">Home</a>
+                                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gray-800 dark:bg-gray-100"></span>
+                            </li>
+                            <li className="group w-[84px]">
+                                <a href="#about">About</a>
+                                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gray-800 dark:bg-gray-100"></span>
+                            </li>
+                            <li className="group w-[113px]">
+                                <a href="#projects">Projects</a>
+                                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gray-800 dark:bg-gray-100"></span>
+                            </li>
+                            <li className="group w-[109px] pb-10">
+                                <a href="#contact">Contact</a>
+                                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gray-800 dark:bg-gray-100"></span>
+                            </li>
+                        </ul>
+                    </motion.div>
+                        <div className="w-full bg-gray-800 p-px dark:bg-gray-100"></div>
+                        <motion.div
+                            variants={{
+                                open: {
+                                y: "0%",
+                                opacity:1
+                                },
+                                closed: {
+                                y: "-42%",
+                                opacity: 0
+                                }
+                            }}
+                            className="flex justify-center space-x-6 items-center pt-10"
+                        >
+                            <label className="rounded-full flex items-center">
+                            <button onClick={handleDarkMode}>
+                                <div className="transition ease-in-out duration-500 text-gray-100 scale-0 dark:block dark:scale-100 dark:rotate-360 absolute">
+                                <BsFillMoonStarsFill size={36} />
+                                </div>
+                                <div className="text-gray-800 block dark:rotate-360 dark:scale-0 transition ease-in-out duration-500">
+                                <BsFillSunFill size={36} />
+                                </div>
+                            </button>
+                            </label>
+                            <a href="https://github.com/GabrielEger2" target="_blank" className="hover:scale-125 transition-all duration-300 text-gray-800 dark:text-gray-100">
+                            <AiFillGithub size={44} />
+                            </a>
+                            <a href="https://www.linkedin.com/in/gabriel-eger-11434b157/" target="_blank" className="hover:scale-125 transition-all duration-300 text-gray-800 dark:text-gray-100">
+                            <AiFillLinkedin size={44} />
+                            </a>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </header>
     );
 };

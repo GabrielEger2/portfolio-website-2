@@ -106,9 +106,9 @@ const Projects = () => {
                 transition={{ duration: 0.25 }}
               >
                 <AnimatePresence>
-                  <div className='rounded-2xl border shadow-lg max-w-[400px] bg-gray-200 border-gray-300 dark:border-gray-950 dark:bg-gray-800'>
+                  <div className='rounded-2xl border shadow-lg max-w-[400px] bg-gray-100 border-gray-300 dark:border-gray-950 dark:bg-gray-800'>
                     <img src={urlFor(element.projectImage).toString()} alt={element.projectTitle} className='w-[400px] h-[225px] object-cover rounded-t-2xl' />
-                    <div className='flex justify-center space-x-4 my-2 text-gray-800 dark:text-gray-200'>
+                    <div className='flex justify-center space-x-4 my-2 text-gray-800 dark:text-gray-100'>
                       {element.projectGithubLink && (
                         <a href={element.projectGithubLink} target='_blank'>
                           <AiOutlineGithub size={30} className=' hover:scale-125 ease-in-out transition-all duration-500' />

@@ -41,13 +41,13 @@ const Contact = () => {
         })
     }
 
-    const notifySucess = () => toast.success("Thank you for contacting me!");
+    const notifySucess = () => toast.success("Thanks for contacting me!");
     const notifyError = () => toast.error("Please fill all the required fields!");
 
     return (
     <div className='bg-gray-50 dark:bg-gray-800' id='contact'>
         <div className='flex justify-center'>
-            <h2 className='text-lg text-center text-gray-400 dark:text-gray-500 mt-10 mb-4'>
+            <h2 className='text-lg text-center text-gray-400 dark:text-gray-500 mt-10 mb-4 lg:mb-10'>
                 Wanna get in touch? <br />
                 <span className='text-gray-800 dark:text-gray-100 text-3xl mt-4 font-bold'>Contact Me</span>
             </h2>

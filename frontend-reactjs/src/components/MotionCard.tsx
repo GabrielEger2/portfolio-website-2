@@ -77,7 +77,7 @@ const MotionCard = ({ id, position, type, isOpen, onClick }: {
             <div style={{ overflowX: 'hidden', overflowY: 'hidden' }}>
               <motion.h2
                 layout='position'
-                className={`font-bold items-center text-center justify-center pt-1 ${position === 'right' || position === 'left' ? 'flex' : ''} space-x-4 text-xl text-gray-800 dark:text-gray-100`}
+                className={`font-bold items-center text-center justify-center pt-1 ${position === 'right' || position === 'left' ? 'flex' : ''} space-x-4 text-xl text-gray-900 dark:text-gray-50`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -100,7 +100,7 @@ const MotionCard = ({ id, position, type, isOpen, onClick }: {
                 )}
               </motion.h2>
               <motion.div
-                className='px-4 flex mt-4 text-gray-800 dark:text-gray-100'
+                className='px-4 flex mt-4 text-gray-900 dark:text-gray-50'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -160,11 +160,11 @@ const MotionCard = ({ id, position, type, isOpen, onClick }: {
                           <ol className="relative border-l border-gray-400 dark:border-gray-900 pb-10">                  
                             <li className="ml-4">
                                 <div className="absolute w-3 h-3 bg-gray-500 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                                <h1 className="mb-1 text-sm font-normal leading-none text-gray-700 dark:text-gray-100">
+                                <h1 className="mb-1 text-sm font-normal leading-none text-gray-700 dark:text-gray-50">
                                   {data.educationDate}
                                 </h1>
-                                <h3 className="text-lg pb-1 font-bold text-gray-800 dark:text-gray-100">{data.educationTitle}</h3>
-                                <p className=" text-base font-normal text-gray-700 dark:text-gray-100">{data.educationDescription}</p>
+                                <h3 className="text-lg pb-1 font-bold text-gray-900 dark:text-gray-50">{data.educationTitle}</h3>
+                                <p className=" text-base font-normal text-gray-700 dark:text-gray-50">{data.educationDescription}</p>
                             </li>
                           </ol>
                         </div>
@@ -178,7 +178,7 @@ const MotionCard = ({ id, position, type, isOpen, onClick }: {
         ) : (
           <motion.h2
             layout='position'
-            className='font-bold min-w-20 sm:w-44 md:w-48 h-32 text-md text-center md:text-xl z-50 text-gray-800 dark:text-gray-100'
+            className='font-bold min-w-20 sm:w-48 h-32 text-md text-center md:text-xl z-50 text-gray-900 dark:text-gray-50'
           >
             <div className='my-5 mb-1 md:my-4 flex justify-center'>
               {icon}

@@ -38,7 +38,7 @@ const Projects = () => {
       <div className='flex justify-center'>
         <h2 className='text-lg text-center text-gray-400 dark:text-gray-500 my-10'>
           Some of my <br />
-          <span className='text-gray-800 dark:text-gray-100 text-3xl mt-4 font-bold'>Projects</span>
+          <span className='text-gray-900 dark:text-gray-50 text-3xl mt-4 font-bold'>Projects</span>
         </h2>
       </div>
       <div className='px-10 max-w-[1300px] h-full mx-auto justify-center'>
@@ -63,7 +63,7 @@ const Projects = () => {
         <div className='space-x-4 flex justify-center mb-4 mt-10'>
           <motion.div 
             className={`items-center justify-center cursor-pointer font-bold rounded-lg px-3 py-1 text-xl ${
-              active === 'All' ? 'bg-purple-500 text-gray-50 dark:bg-yellow-500 dark:text-gray-800' : 'border text-gray-800 border-purple-500 dark:text-gray-100 dark:border-yellow-500'
+              active === 'All' ? 'bg-purple-500 text-gray-50 dark:bg-yellow-500 dark:text-gray-800' : 'border text-gray-900 border-purple-500 dark:text-gray-100 dark:border-yellow-500'
             }`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -74,7 +74,7 @@ const Projects = () => {
           </motion.div>        
           <motion.div 
             className={`items-center justify-center cursor-pointer font-bold rounded-lg px-3 py-1 text-xl ${
-              active === 'Python' ? 'bg-purple-500 text-gray-50 dark:bg-yellow-500 dark:text-gray-800' : 'border text-gray-800 border-purple-500 dark:text-gray-100 dark:border-yellow-500'
+              active === 'Python' ? 'bg-purple-500 text-gray-50 dark:bg-yellow-500 dark:text-gray-800' : 'border text-gray-900 border-purple-500 dark:text-gray-100 dark:border-yellow-500'
             }`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -85,7 +85,7 @@ const Projects = () => {
           </motion.div>
           <motion.div 
             className={`items-center justify-center cursor-pointer font-bold rounded-lg px-2 py-1 text-xl ${
-              active === 'JS/TS' ? 'bg-purple-500 text-gray-50 dark:bg-yellow-500 dark:text-gray-800' : 'border text-gray-800 border-purple-500 dark:text-gray-100 dark:border-yellow-500'
+              active === 'JS/TS' ? 'bg-purple-500 text-gray-50 dark:bg-yellow-500 dark:text-gray-800' : 'border text-gray-900 border-purple-500 dark:text-gray-100 dark:border-yellow-500'
             }`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -95,7 +95,7 @@ const Projects = () => {
             JS/TS
           </motion.div>  
         </div>
-        <motion.div layout className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-6 gap-y-4 pt-4 justify-center">
+        <motion.div layout className="grid grid-cols-[repeat(auto-fit,minmax(300px,.5fr))] ssm:grid-cols-[repeat(auto-fit,minmax(400px,.5fr))] md:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-6 gap-y-4 pt-4 justify-center">
           {filteredProjects.map((element: any) => {
             return (
               <motion.div key={element.projectTitle}
@@ -108,17 +108,22 @@ const Projects = () => {
                 <AnimatePresence>
                   <div className='rounded-2xl border shadow-lg max-w-[400px] bg-gray-100 border-gray-300 dark:border-gray-950 dark:bg-gray-800'>
                     <img src={urlFor(element.projectImage).toString()} alt={element.projectTitle} className='w-[400px] h-[225px] object-cover rounded-t-2xl' />
-                    <div className='flex justify-center space-x-4 my-2 text-gray-800 dark:text-gray-100'>
-                      {element.projectGithubLink && (
-                        <a href={element.projectGithubLink} target='_blank'>
-                          <AiOutlineGithub size={30} className=' hover:scale-125 ease-in-out transition-all duration-500' />
-                        </a>
-                      )}
-                      {element.projectWebLink && (
-                        <a href={element.projectWebLink} target='_blank'>
-                          <AiOutlineLink size={30} className='hover:scale-125 ease-in-out transition-all duration-500' />
-                        </a>
-                      )}
+                    <div className='flex-col justify-center h-44 text-gray-900 dark:text-gray-50'>
+                      <div className='flex justify-center space-x-4 pt-2'>
+                        {element.projectGithubLink && (
+                          <a href={element.projectGithubLink} target='_blank'>
+                            <AiOutlineGithub size={30} className=' hover:scale-125 ease-in-out transition-all duration-500' />
+                          </a>
+                        )}
+                        {element.projectWebLink && (
+                          <a href={element.projectWebLink} target='_blank'>
+                            <AiOutlineLink size={30} className='hover:scale-125 ease-in-out transition-all duration-500' />
+                          </a>
+                        )}
+                      </div>
+                      <p className='text-center pt-4'>
+                        <span className='font-bold'>{element.projectTitle}</span>: {element.projectDescription} <span className='font-bold text-purple-500 dark:text-yellow-500'>{element.projectTechStack}</span>
+                      </p>
                     </div>
                   </div>
                 </AnimatePresence>

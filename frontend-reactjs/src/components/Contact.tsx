@@ -32,7 +32,7 @@ const Contact = () => {
         }
     
         // Sending the email using emailjs
-        emailjs.send('SERVICE_ID', 'TEMPLATE_ID', templateParams, 'PUBLIC_KEY')
+        emailjs.send('service_pmgw5qc', 'template_hkgyj0j', templateParams, '5X3id5HvIX-Qx5xKt')
         .then(() => {
           notifySucess();
           setName('')
@@ -49,10 +49,10 @@ const Contact = () => {
         <div className='flex justify-center'>
             <h2 className='text-lg text-center text-gray-400 dark:text-gray-500 mt-10 mb-4 lg:mb-10'>
                 Wanna get in touch? <br />
-                <span className='text-gray-800 dark:text-gray-100 text-3xl mt-4 font-bold'>Contact Me</span>
+                <span className='text-gray-900 dark:text-gray-50 text-3xl mt-4 font-bold'>Contact Me</span>
             </h2>
         </div>
-        <div className="text-center lg:text-left pb-10 text-gray-800 dark:text-gray-100">
+        <div className="text-center lg:text-left pb-10 text-gray-900 dark:text-gray-50">
             <div className="container mx-auto xl:px-32">
                 <div className="grid lg:grid-cols-2 gap-12">
                     <div className="md:mt-4 lg:mt-0">

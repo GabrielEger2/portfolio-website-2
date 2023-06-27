@@ -84,14 +84,14 @@ const Navbar = () => {
             >
                 <div className='bg-gray-100 border-b-2 border-gray-300 dark:bg-gray-900 dark:border-gray-950 items-center h-full'> 
                     <div className="flex justify-between items-center h-full max-w-[1400px] mx-auto px-6 font-bold">
-                        <a href="#home" className='text-gray-800 text-4xl dark:text-gray-50 flex items-center'>
+                        <a href="#home" className='text-gray-900 text-4xl dark:text-gray-50 flex items-center'>
                             <div className='pr-2'>
                                 <img src={stripsDarkIcon} alt="" className='h-12 w-12 dark:hidden' />
                                 <img src={stripsWhiteIcon} alt="" className='h-12 w-12 hidden dark:block' />
                             </div>
                             &lt;Gabriel /&gt;
                         </a>
-                        <ul className="text-gray-800 md:flex hidden text-2xl space-x-6 dark:text-gray-50">
+                        <ul className="text-gray-900 md:flex hidden text-2xl space-x-6 dark:text-gray-50">
                             <li className="group">
                                 <a href="#home">Home</a>
                                 <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gray-800 dark:bg-gray-50"></span>
@@ -113,7 +113,7 @@ const Navbar = () => {
                                     <div className='transition ease-in-out duration-500 text-gray-50 scale-0 dark:block dark:scale-100 dark:rotate-360 absolute'>
                                         <BsFillMoonStarsFill size={22} />
                                     </div>
-                                    <div className='text-gray-800 block dark:rotate-360 dark:scale-0 transition ease-in-out duration-500'>
+                                    <div className='text-gray-900 block dark:rotate-360 dark:scale-0 transition ease-in-out duration-500'>
                                         <BsFillSunFill size={22} />
                                     </div>
                                 </button>
@@ -189,10 +189,10 @@ const Navbar = () => {
                             }
                         }}
                     >
-                        <a href="#home" className="text-gray-800 text-4xl dark:text-gray-100 flex font-bold items-center pb-8 justify-center">
+                        <a href="#home" className="text-gray-900 text-4xl dark:text-gray-100 flex font-bold items-center pb-8 justify-center">
                         &lt;Gabriel /&gt;
                         </a>
-                        <ul className="text-gray-800 text-3xl space-y-6 dark:text-gray-100 font-bold">
+                        <ul className="text-gray-900 text-3xl space-y-6 dark:text-gray-100 font-bold">
                             <li className="group w-[82px]">
                                 <a href="#home">Home</a>
                                 <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gray-800 dark:bg-gray-100"></span>
@@ -227,18 +227,18 @@ const Navbar = () => {
                         >
                             <label className="rounded-full flex items-center">
                             <button onClick={handleDarkMode}>
-                                <div className="transition ease-in-out duration-500 text-gray-100 scale-0 dark:block dark:scale-100 dark:rotate-360 absolute">
+                                <div className="transition ease-in-out duration-500 text-gray-50 scale-0 dark:block dark:scale-100 dark:rotate-360 absolute">
                                 <BsFillMoonStarsFill size={36} />
                                 </div>
-                                <div className="text-gray-800 block dark:rotate-360 dark:scale-0 transition ease-in-out duration-500">
+                                <div className="text-gray-900 block dark:rotate-360 dark:scale-0 transition ease-in-out duration-500">
                                 <BsFillSunFill size={36} />
                                 </div>
                             </button>
                             </label>
-                            <a href="https://github.com/GabrielEger2" target="_blank" className="hover:scale-125 transition-all duration-300 text-gray-800 dark:text-gray-100">
+                            <a href="https://github.com/GabrielEger2" target="_blank" className="hover:scale-125 transition-all duration-300 text-gray-900 dark:text-gray-50">
                             <AiFillGithub size={44} />
                             </a>
-                            <a href="https://www.linkedin.com/in/gabriel-eger-11434b157/" target="_blank" className="hover:scale-125 transition-all duration-300 text-gray-800 dark:text-gray-100">
+                            <a href="https://www.linkedin.com/in/gabriel-eger-11434b157/" target="_blank" className="hover:scale-125 transition-all duration-300 text-gray-900 dark:text-gray-50">
                             <AiFillLinkedin size={44} />
                             </a>
                         </motion.div>

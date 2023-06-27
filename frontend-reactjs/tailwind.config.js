@@ -7,6 +7,9 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      screens: {
+        'ssm': '400px',
+      },
       borderRadius: {
         'xll': '10rem',
       },

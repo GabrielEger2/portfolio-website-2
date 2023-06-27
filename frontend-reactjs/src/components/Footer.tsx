@@ -14,12 +14,12 @@ const Footer = () => {
                         <a href="" className="flex items-center">
                             <img src={stripsDarkIcon} className="h-8 mr-3 dark:hidden" alt="Gabriel Strips Logo" />
                             <img src={stripsWhiteIcon} className="h-8 mr-3 hidden dark:block" alt="Gabriel Strips Logo" />
-                            <span className="self-center text-2xl font-semibold whitespace-nowrap text-gray-800 dark:text-gray-100">&lt;Gabriel /&gt;</span>
+                            <span className="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 dark:text-gray-50">&lt;Gabriel /&gt;</span>
                         </a>
                     </div>
                 <div className="grid grid-cols-2 gap-12 md:gap-6 sm:grid-cols-3">
                     <div>
-                        <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-gray-100">Project</h2>
+                        <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-gray-50">Project</h2>
                         <ul className="text-gray-500 dark:text-gray-400 font-medium">
                             <li className="mb-4">
                                 <a href="https://www.themoviedb.org/" className="hover:underline">Github</a>
@@ -30,7 +30,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-gray-100">Creator</h2>
+                        <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-gray-50">Creator</h2>
                         <ul className="text-gray-500 dark:text-gray-400 font-medium">
                             <li className="mb-4">
                                 <a href="https://github.com/GabrielEger2" className="hover:underline ">Github</a>
@@ -41,7 +41,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-gray-100">License</h2>
+                        <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-gray-50">License</h2>
                         <ul className=" text-gray-500 dark:text-gray-400 font-medium">
                             <li className="mb-4">
                                 <a href="https://en.wikipedia.org/wiki/MIT_License" className="hover:underline">MIT's license</a>

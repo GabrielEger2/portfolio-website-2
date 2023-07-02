@@ -76,7 +76,7 @@ const Navbar = () => {
     };
 
     return (
-        <header className='z-50'>
+        <header className='z-50 pb-8'>
             <motion.div
                 className={`fixed top-0 w-full z-50 shadow-lg ${
                     nav ? 'h-16' : 'h-20' 
@@ -122,7 +122,7 @@ const Navbar = () => {
                         <motion.button
                             animate={mobileNav ? 'open' : 'closed'}
                             onClick={() => toggleMobileNav()}
-                            className='flex flex-col space-y-1 md:hidden p-1'
+                            className='flex flex-col space-y-1 md:hidden p-1 outline-none'
                         >
                             <motion.span 
                                 variants={{

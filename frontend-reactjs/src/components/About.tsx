@@ -41,7 +41,7 @@ const About = () => {
     }, []);
 
   return (
-    <div className='bg-gray-50 dark:bg-gray-800 z-40' id='about'>
+    <div className='bg-gray-50 dark:bg-gray-800' id='about'>
         <div className='flex justify-center'>
             <h2 className='text-lg text-center text-gray-400 dark:text-gray-500 my-10'>
                 Get to know <br />
@@ -92,7 +92,7 @@ const About = () => {
                         </h2>
                         <div className='flex justify-center md:justify-normal'>
                             <motion.a 
-                                className="mt-10 mb-10 xl:mb-20 items-center w-48 justify-center cursor-pointer bg-purple-500 text-gray-50 font-bold rounded-lg px-6 py-2 text-3xl dark:bg-yellow-500 dark:text-gray-800"
+                                className="mt-10 mb-10 xl:mb-20 flex items-center justify-center cursor-pointer bg-purple-500 text-gray-50 font-bold rounded-lg px-6 py-2 text-3xl dark:bg-yellow-500 dark:text-gray-800"
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
                                 transition={{ type: "spring", stiffness: 200, damping: 12 }}

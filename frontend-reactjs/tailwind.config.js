@@ -16,6 +16,10 @@ export default {
       rotate: {
         '360': '360deg',
       },
+      backgroundImage: {
+        'dark-mode-pattern': "url('/src/assets/imgs/DarkModePattern.png')",
+        'white-mode-pattern': "url('/src/assets/imgs/WhiteModePattern.png')",
+      },
     },
   },
   plugins: [],

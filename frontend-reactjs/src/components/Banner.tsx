@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import ReactTyped from 'react-typed';
 import { motion } from "framer-motion";
 
@@ -10,12 +12,27 @@ import elipseDark from '../assets/imgs/elipseDark.png';
 import halfElipse from '../assets/imgs/halfElipse.png';
 import halfElipseDark from '../assets/imgs/halfElipseDark.png';
 
+import { getResumePDFUrl } from '../client';
+
 const Banner = () => {
+  const [pdfUrl, setPdfUrl] = useState('');
+
+  useEffect(() => {
+    async function fetchPdfUrl() {
+      const url = await getResumePDFUrl();
+      setPdfUrl(url);
+    }
+    fetchPdfUrl();
+  }, []);
+
   const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = "/Gabriel'sResume.pdf";
-    link.download = "Gabriel's Resume.pdf";
-    link.click();
+    if (pdfUrl) {
+      const link = document.createElement('a');
+      link.href = pdfUrl;
+      link.target = "_blank"; // Open the link in a new tab (optional)
+      link.download = "Gabriel's Resume.pdf";
+      link.click();
+    }
   };
 
   return (

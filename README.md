@@ -7,5 +7,5 @@ This is a code repository for my personal portfolio website, with Sanity.IO as t
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In order to locally use this website, you must have react and install all the librarie's requirements using the following command:</p> 
 
 ```bash
- npm run build #or yarn run build
+ npm install
 ```
